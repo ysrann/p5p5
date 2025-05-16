@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(10, 50px);
+  gap: 2px;
+  margin: 20px 0;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #fff;
+}
+
+.cell:nth-child(odd) {
+  background-color: #e6f7ff;
+}
+
+.cell.question {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.pion {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.5s ease;
+}
+
+.pion.player1 {
+  background-color: red;
+  top: 5px;
+  left: 5px;
+}
+
+.pion.player2 {
+  background-color: yellow;
+  bottom: 5px;
+  right: 5px;
+}
+
+#controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#dice-display {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+#rollDice {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+#turnDisplay {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#question-box {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background: white;
+  border: 2px solid #007bff;
+  padding: 20px;
+  z-index: 10;
+  text-align: center;
+  display: none;
+}
+
+#question-box.show {
+  display: block;
+}
+
+#question-text {
+  margin-bottom: 10px;
+}
+
+#answers button {
+  display: block;
+  margin: 5px auto;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#timer {
+  font-weight: bold;
+  color: red;
+  margin-top: 10px;
+}
